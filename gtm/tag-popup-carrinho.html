@@ -1,8 +1,9 @@
 <!-- Ornamentare - pop-up carrinho | mesmo visual e texto do pop-up v7 do site (21/11) | roda so em /checkout/cart -->
 <style nonce="{{Nonce CSP}}">
-#orn-exit{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(17,17,17,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);font-family:"Inter Tight",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#111}
+#orn-exit{position:fixed;top:0;right:0;bottom:0;left:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(17,17,17,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);font-family:"Inter Tight",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#111}
 #orn-exit.on{display:flex;animation:oeFade .25s ease}
 @keyframes oeFade{from{opacity:0}to{opacity:1}}
+@keyframes oeSheet{from{transform:translateY(100%)}to{transform:none}}
 #orn-exit .oe-card{position:relative;display:grid;grid-template-columns:270px 1fr;width:100%;max-width:760px;background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.35)}
 #orn-exit .oe-side{background:linear-gradient(180deg,#f3f2ef 0%,#e6e4df 100%);display:flex;flex-direction:column;justify-content:space-between;gap:22px;padding:32px 26px}
 #orn-exit .oe-logo{display:block;width:100%;max-width:210px;height:auto;filter:brightness(0)}
@@ -17,7 +18,7 @@
 #orn-exit .oe-tag:before{content:"";width:7px;height:7px;border-radius:50%;background:#a3172a}
 #orn-exit .oe-tag span{font-weight:400;color:#8a8780}
 #orn-exit h3{font-family:inherit;font-weight:300;font-size:36px;line-height:1.08;letter-spacing:-1px;margin:16px 0 14px}
-#orn-exit h3 b{font-weight:650;color:#a3172a}
+#orn-exit h3 b{font-weight:600;color:#a3172a}
 #orn-exit p{font-size:14.5px;font-weight:300;line-height:1.55;color:#4a4842;margin:0 0 18px}
 #orn-exit p strong{font-weight:600;color:#111}
 #orn-exit .oe-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px;padding:0;list-style:none}
@@ -32,9 +33,8 @@
 @media (max-width:640px){
   #orn-exit{align-items:flex-end;padding:0}
   #orn-exit .oe-card{grid-template-columns:1fr;max-width:none;border-radius:16px 16px 0 0;animation:oeSheet .3s ease}
-  @keyframes oeSheet{from{transform:translateY(100%)}to{transform:none}}
   #orn-exit .oe-side{display:none}
-  #orn-exit .oe-main{padding:20px 20px calc(20px + env(safe-area-inset-bottom))}
+  #orn-exit .oe-main{padding:20px 20px 28px}
   #orn-exit .oe-mob{display:flex;align-items:center;gap:12px;margin:0 36px 18px 0;padding-bottom:14px;border-bottom:1px solid #eee}
   #orn-exit .oe-mob .lg{width:128px;height:auto;filter:brightness(0);margin-right:auto}
   #orn-exit .oe-mob .ex{width:84px;height:auto;opacity:.9}
