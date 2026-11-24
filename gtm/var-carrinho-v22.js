@@ -7,7 +7,8 @@ function(){
     var want=null; try{ want=sessionStorage.getItem('orn_frete'); }catch(e){}
     if(want){ var qs=document.querySelectorAll('.ch-cart-shipping-quotation'); for(var i=0;i<qs.length;i++){ var s=qs[i].querySelector('.ch-cart-shipping-name strong'); if(s && s.textContent.replace(/\s+/g,' ').trim()===want.replace(/\s+/g,' ').trim()){ try{ sessionStorage.removeItem('orn_frete'); }catch(e){} qs[i].click(); break; } } }
   },1200); } }catch(e){}
-  try{ if(location.pathname.indexOf('/checkout')===0 && location.pathname.indexOf('/checkout/cart')!==0){ setInterval(function(){ try{
+  try{ if(location.pathname.indexOf('/checkout')===0){ setInterval(function(){ try{
+    if(location.pathname.indexOf('/checkout/cart')===0) return;
     var rs=document.querySelectorAll('input[type=radio]'); var it=null;
     for(var i=0;i<rs.length && !it;i++){ var row=rs[i];
       for(var k=0;k<6 && row && row.parentElement;k++){ var p=row.parentElement; var n=0; for(var j=0;j<p.children.length;j++){ if(p.children[j].querySelector && p.children[j].querySelector('input[type=radio]')) n++; }
